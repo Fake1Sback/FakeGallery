@@ -1,0 +1,169 @@
+* {
+    box-sizing: border-box;
+}
+
+html,body{
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+body{
+    background-color: black;
+}
+
+#caption{
+    position: absolute;
+    z-index: 1;
+    justify-items: center;
+    right: 0;
+    left: 0;
+    top:20%;
+    pointer-events: none;
+    font-family: Amaranth;
+}
+
+#caption > h1, p{
+    color:ghostwhite;
+    font-size: 9vw;
+    text-align: center;
+    /* opacity: 0; */
+    transition-property: opacity;
+    transition-duration: 1.5s;
+}
+
+#caption > h1{
+    opacity: 0;
+}
+
+#caption > p{
+    opacity: 0;
+    letter-spacing: -3px;
+}
+
+body:not(:hover) #caption > h1
+{
+    opacity: 1;
+}
+
+body:not(:hover) #caption > p
+{
+    opacity: 1;
+}
+
+#caption > p{
+    margin-top: 0%;
+}
+
+#caption > h1{
+    margin-bottom: 0%;
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: stretch;
+    right: 0%;
+    left: 0%;
+    font-family: Amaranth;
+}
+
+.flex-item{
+    height: 100vh;
+    border:10px solid black;
+    border-radius: 50px;
+    filter:blur(10px);
+    flex-basis: 33.33333333%;
+    max-width: 40%;
+    min-width: 30%;
+    transition-property: flex-basis, -webkit-filter;
+    transition-duration: 1.5s;
+    transition-timing-function: ease-out;
+}
+
+.flex-item > h2{
+    text-align: center;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    font-size: 8vw;
+    color: ghostwhite;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 3s;
+    transition-delay: 1.1s;
+}
+
+.flex-item > p {
+    text-align: center;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    color:ghostwhite;
+    padding-left: 5%;
+    padding-right:5%;
+    padding-bottom: 3%; 
+    font-size: 1.9vw;
+    font-weight: 700;
+    opacity: 0;
+    transition-property: opacity;   
+    transition-duration: 3s;
+    transition-delay: 1.1s; 
+}
+
+.flex-item:hover{
+    flex-basis: 40%;
+    filter:blur(1px);
+}
+
+.flex-item:hover > h2{
+    opacity:1;
+}
+
+.flex-item:hover > p{
+    opacity:1;
+}
+
+.flex-item:not(:hover) > p{
+    transition-duration: 0.5s;
+    transition-delay: 0s;
+    opacity: 0;
+}
+
+.flex-item:not(:hover) > h2{
+    transition-duration: 0.5s;
+    transition-delay: 0s;
+    opacity: 0;
+} 
+
+.img1{
+     background:url("images/9.jpg");
+     background-size: cover;
+} 
+
+.img2{
+    background:url("images/2.jpg");
+    background-size: cover;
+}
+
+.img3{
+    background:url("images/3.jpg");
+    background-size: cover;
+}
+
+@media screen and (max-width:650px)
+{
+    html,body{
+        overflow: auto;
+    }
+
+    .flex-container{
+        flex-direction: column;
+    }
+
+    .flex-item{
+        max-width: 100%;
+    }
+
+    .flex-item > p{
+        font-size: 4vw;
+    }
+}
+
